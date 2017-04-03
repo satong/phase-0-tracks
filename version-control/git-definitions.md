@@ -17,3 +17,5 @@ A commit is a "save point" to save all the changes you've made up till that poin
 * What is a merge conflict?
 
 A merge conflict typically happens when the current branch and target merge branch (the branch that you want to merge into the current branch) have diverged because there are commits in one branch that aren't in the other.
+
+**Random edit**
