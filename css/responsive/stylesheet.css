@@ -41,10 +41,43 @@ a {
 
 #content {
   float: left;
-  width: 68%;
+  width: 60%;
 }
 
 #footer {
   clear: both;
   background: #A2A2A2;
+}
+
+@media screen and (max-width: 960px) {
+
+  #wrapper {
+    width: 100%;
+  }
+
+  #content {
+    font-size: 0.75em;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  #side-a {
+    display: block;
+    float: left;
+    width: 100%;
+    font-size: 0.75em;
+  }
+
+  #content {
+    width: 100%;
+  }
+
+  ul > li {
+    display: inline-block;
+  }
 }
