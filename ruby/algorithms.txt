@@ -1,0 +1,18 @@
+Release 0: Robot using elevator
+1. Enter at least two steps into the elevator when doors open
+2. If button panel is on the left side of the elevator, turn to the left and move forward until you reach the wall, turn left again and progress forward to the panel. If button panel is on the right side of the elevator, turn to the right and move forward until you reach the wall, turn right again and progress forward to the panel. If button panel is on both sides of the elevator, follow instructions for button panel on left side of elevator.
+3. Using your index finger, reach out and press the button with the number corresponding to the desired floor number (to find button, start at button 1 and proceed along the rows until your desired number is reached)
+4. Wait for the doors to close. If doors do not close, push the close door button.
+5. Wait for the elevator to reach your desired floor. Stay in the elevator until doors open at your desired floor.
+6. Turn towards the center of the elevator and move towards the center.
+7. Turn towards the open doors and move forwards until you are outside the elevator.
+
+Release 1: Making the bed in the morning
+1. Get out of the bed
+2. Pick up all pillows and blankets that may have fallen to the ground overnight
+3. Place objects on chair next to the bed
+4. Straighten the top sheet on bed and tuck all edges except the top edge into the space between the mattress and the bed frame
+5. Take blankets off the chair and place on top of the bed above the top sheet
+6. Straighten blankets and align the long edges to the length of the mattress
+7. Take pillows off the chair and place along the top of the bed
+8. Start with the largest pillows and place smaller pillows in front of the larger ones
