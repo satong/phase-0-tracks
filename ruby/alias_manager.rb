@@ -42,7 +42,7 @@ end
 # alternative method: fake_name_1 = name.split(' ').reverse.join(' ')
 
 
-# Release 1
+# Release 1: provide user interface
 user_input = ""
 spy_names = Hash.new
 while user_input != "quit"
@@ -54,3 +54,5 @@ while user_input != "quit"
   end
   p spy_names
 end
+# Release 2: store alias
+spy_names.each {|old_name, new_name| p "#{new_name} is actually #{old_name}"}
