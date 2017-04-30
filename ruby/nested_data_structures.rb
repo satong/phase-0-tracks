@@ -32,6 +32,11 @@ dinghy = {
     }
 }
 
+# Print the LOA information of a Firefly boat
 p dinghy[:firefly][:dimensions][:LOA]
+
+# Print the name of the first designer for the Laser boat
 p dinghy[:laser][:design][1]
+
+# Print all the dimensions (LOA and mast length) of an Optimist boat
 p dinghy[:optimist][:dimensions]
