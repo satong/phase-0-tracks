@@ -1,37 +1,24 @@
-# Take input of spy's name
-p "Enter spy's name:"
-name = gets.chomp
-# Split input into first name and last name
-first_name = name.split(' ')[0].capitalize
-last_name = name.split(' ')[1].capitalize
-
-# Swap first and last name
-def fake_name_1(first_name, last_name)
-  fake_name_1 = last_name + " " + first_name
-end
-# alternative method: fake_name_1 = name.split(' ').reverse.join(' ')
-
-# Print out fake name
-p fake_name_1(first_name, last_name)
+# Release 0
 
 # Change all vowels to the next vowel in 'aeiou'
-def fake_name_2(name)
-  fake_name_2 = name.chars.map! do |letter|
+def fake_name(name)
+  fake_name = name.chars.map! do |letter|
     if letter == " "
       letter = " "
     elsif "aeiou".include?(letter)
-      letter = vowel_scramble(letter)
+      letter = next_vowel(letter)
     elsif "zdhnt".include?(letter)
       letter = pre_vowel_scramble(letter)
     else
       letter.next
     end
   end
-  fake_name_2.join
+  fake_name = fake_name.join
+  swap_name_order(fake_name)
 end
 
 # Swap out a given vowel with the next vowel in order. For "u" swap it out for "a"
-def vowel_scramble(vowel)
+def next_vowel(vowel)
   vowel_list = "aeiou".chars
   original_index = vowel_list.index(vowel)
   new_vowel = vowel_list.rotate[original_index]
@@ -45,5 +32,25 @@ def pre_vowel_scramble(letter)
   return new_letter
 end
 
-# Print out fake name
-p fake_name_2(name)
+# Swap first and last name
+def swap_name_order(name)
+  # Split input into first name and last name
+  first_name = name.split(' ')[0].capitalize
+  last_name = name.split(' ')[1].capitalize
+  fake_name_1 = last_name + " " + first_name
+end
+# alternative method: fake_name_1 = name.split(' ').reverse.join(' ')
+
+
+# Release 1
+user_input = ""
+spy_names = Hash.new
+while user_input != "quit"
+  # Take input of spy's name
+  p "Enter spy's name. Enter 'quit' to end."
+  user_input = gets.chomp
+  if user_input != "quit"
+    spy_names[user_input] = fake_name(user_input.downcase)
+  end
+  p spy_names
+end
