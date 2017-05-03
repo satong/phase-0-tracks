@@ -46,7 +46,7 @@ while employee_count > 0
 	if vamp_name == "Drake Cula" || vamp_name == "Tu Fang"
 		result = "Definitely a vampire."
 
-  elsif age != current_age && garlic.downcase == "n" && insurance.downcase == "n"
+  	elsif age != current_age && garlic.downcase == "n" && insurance.downcase == "n"
     result = "Almost certainly a vampire."
 
 	elsif age == current_age && (garlic.downcase == "y" || insurance.downcase == "y")
