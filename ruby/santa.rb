@@ -1,5 +1,7 @@
 # Do the thing for module 6.3
 class Santa
+  attr_reader :age, :ethnicity
+  attr_accessor :gender
 
   def speak
     p "Ho, ho, ho! Haaaappy holidays!"
@@ -37,18 +39,18 @@ class Santa
   end
 
   # Release 2: setter method
-  def gender=(new_gender)
-    @gender = new_gender
-  end
+  #def gender=(new_gender)
+    #@gender = new_gender
+  #end
 
   # Release 2: getter methods
-  def age
-    @age
-  end
+  #def age
+    #@age
+  #end
 
-  def ethnicity
-    @ethnicity
-  end
+  #def ethnicity
+    #@ethnicity
+  #end
 
 end
 
