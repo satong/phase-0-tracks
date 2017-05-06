@@ -1,7 +1,7 @@
 # Do the thing for module 6.3
 class Santa
-  attr_reader :age, :ethnicity
-  attr_accessor :gender
+  attr_reader :ethnicity
+  attr_accessor :gender, :age
 
   def speak
     p "Ho, ho, ho! Haaaappy holidays!"
@@ -12,7 +12,7 @@ class Santa
   end
 
   def initialize(gender, ethnicity)
-    p "Initializing Santa instance ..."
+    # p "Initializing Santa instance ..."
     # Release 1
     @gender = gender
     @ethnicity = ethnicity
@@ -54,6 +54,7 @@ class Santa
 
 end
 
+=begin
 # Release 0 driver code
 # test = Santa.new
 # test.speak
@@ -74,10 +75,25 @@ end
 # Check that each santa has been initialized in array
 my_santas_array.each do |santa|
   santa.about
-  # Release 2 driver code
+  # Release 2 and 3 driver code
   santa.get_mad_at("Vixen")
   santa.celebrate_birthday
   santa.gender = "new gender"
+  santa.about
+  p "Santa is #{santa.age} years old and is #{santa.ethnicity}"
+end
+=end
+
+# Release 4
+santas = []
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+# initialize 100 santas
+100.times do
+  santas << Santa.new(example_genders.sample, example_ethnicities.sample)
+end
+santas.each do |santa|
+  santa.age = rand(0..140)
   santa.about
   p "Santa is #{santa.age} years old and is #{santa.ethnicity}"
 end
