@@ -18,7 +18,7 @@ class Santa
     @age = 0
   end
 
-  # To check attributes
+  # Release 1: to check attributes
   def about
     p "Gender: #{@gender}"
     p "Ethnicity: #{@ethnicity}"
@@ -26,31 +26,36 @@ class Santa
     p "Age: #{@age}"
   end
 
+  # Release 2: attribute-changing methods
+  def celebrate_birthday
+    @age += 1
+  end
+
+  def get_mad_at(reindeer_name)
+    @reindeer_ranking.delete(reindeer_name)
+    @reindeer_ranking << reindeer_name
+  end
+
+  # Release 2: setter method
+  def gender=(new_gender)
+    @gender = new_gender
+  end
+
+  # Release 2: getter methods
+  def age
+    @age
+  end
+
+  def ethnicity
+    @ethnicity
+  end
+
 end
 
+# Release 0 driver code
 # test = Santa.new
 # test.speak
 # test.eat_milk_and_cookies("choc chip")
-
-=begin
-# Release 1 initialization code - needs refactoring
-santas = []
-santas << Santa.new("agender", "black")
-santas << Santa.new("female", "Latino")
-santas << Santa.new("bigender", "white")
-santas << Santa.new("male", "Japanese")
-santas << Santa.new("female", "prefer not to say")
-santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
-santas << Santa.new("N/A", "N/A")
-=end
-
-# Release 1 initialization code refactored
-santas = []
-example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
-example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
-example_genders.length.times do |i|
-  santas << Santa.new(example_genders[i], example_ethnicities[i])
-end
 
 # Release 1 diverse driver code
 # Hash of santas with names and keys and gender and ethnicity attributes as values
@@ -66,5 +71,11 @@ my_santas.each do |k,v|
 end
 # Check that each santa has been initialized in array
 my_santas_array.each do |santa|
-  santa.about  
+  santa.about
+  # Release 2 driver code
+  santa.get_mad_at("Vixen")
+  santa.celebrate_birthday
+  santa.gender = "new gender"
+  santa.about
+  p "Santa is #{santa.age} years old and is #{santa.ethnicity}"
 end
