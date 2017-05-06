@@ -5,7 +5,9 @@
   # Where there is a match, update the guess array with the letter in the corresponding place
   # If there is no match, ask user 2 for next guess
   # Repeat until the number of guesses equals the length of the input word
+  # Ensure that only unique letters are counted as guesses
 
+# Class declaration
 class Hangman
   attr_reader :guess_array, :word, :word_array, :allowed_guesses
 
@@ -22,6 +24,7 @@ class Hangman
   end
 
   def check_word(letter)
+    # To ensure repeated guesses do not count against player
     if !@letters_guessed.include?(letter)
       @word_array.each_with_index do |x, idx|
         @guess_array[idx] = letter if x == letter
@@ -30,17 +33,18 @@ class Hangman
       @guess_count += 1
     end
     @guess_array
+    # To provide feedback on each guess provided
     p @guess_array.join
     p "You have made #{@guess_count}/#{@allowed_guesses} guesses."
   end
 
   def is_over
-    !@guess_array.include?("-") || @guess_count >= @allowed_guesses
+    !@guess_array.include?("-") || @guess_count >= @allowed_guesses # limits guesses
   end
 
 end
 
-
+# Driver code
 p "Welcome to Hangman!"
 p "Player 1 please enter a word:"
 word = gets.chomp.downcase
@@ -52,6 +56,7 @@ while !game.is_over
   game.check_word(letter)
 end
 
+# Parting message for whether game was won or lost
 if game.is_over && game.guess_array.include?("-")
   p "You failed to guess '#{game.word}'?! That's so lame"
 else
