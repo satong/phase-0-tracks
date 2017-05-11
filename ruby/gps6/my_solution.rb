@@ -94,3 +94,21 @@ end
 
 #=======================================================================
 # Reflection Section
+=begin
+What are the differences between the two different hash syntaxes shown in the state_data file?
+=> When using the hashrocket, strings are stored as keys. Since strings are mutable, Ruby needs to store each string you mention throughout your source code in it's separate entity
+vs
+: When using colons, symbols are stored as keys. Symbols are  "immutable strings" which means the same symbol is stored as the same entity when referenced many times throughout the source code
+
+What does require_relative do? How is it different from require?
+require_relative modifies the loadpath to access the linked file in the location relative to the current file vs require assumes that the code will be run from a particular place in the file system.
+
+What are some ways to iterate through a hash?
+You can use loops to iterate through a hash
+
+When refactoring virus_effects, what stood out to you about the variables, if anything?
+both methods that are called in virus_effects do not actually need arguments because we have already stored those variables as attributes
+
+What concept did you most solidify in this challenge?
+I've clarified my understanding of attr_reader usage and benefits.
+=end
