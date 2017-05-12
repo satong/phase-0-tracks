@@ -18,3 +18,36 @@ for (i = 0; i < horseColors.length; i++) {
 }
 
 console.log(horseProfiles);
+
+// Release 2: Build Many Objects Using a Constructor
+function Car(type, color, isFast, numWheels) {
+
+	// properties
+	this.type = type;
+	this.color = color;
+	this.isFast = isFast;
+	this.numWheels = numWheels;
+
+	// function
+	this.accelerate = function() { console.log("The car accelerated!")};
+}
+
+// Release 2 driver code
+var newCar = new Car("roadster", "red", true, 4);
+console.log("---------");
+console.log(newCar);
+console.log("---------");
+
+newCar.accelerate();
+newCar.type = "minivan";
+newCar.color = "green";
+newCar.isFast = false;
+
+console.log("---------");
+console.log(newCar);
+console.log("---------");
+
+var newCar2 = new Car("truck", "black", false, 18)
+console.log("---------");
+console.log(newCar2);
+console.log("---------");
