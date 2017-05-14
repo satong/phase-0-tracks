@@ -7,7 +7,7 @@
   // longestElement variable will be updated to whichever is the longest element
 // output: the variable longestElement
 
-function longestPhrase(array) {
+function longestWord(array) {
   var longestElement = array[0];
   for (var i = 1; i < array.length; i++) {
     if (longestElement.length < array[i].length) {
@@ -36,12 +36,54 @@ function keyvalueMatch(object1, object2) {
   return false;
 }
 
+// Release 2: Generate Random Test Data
+// Write a function that takes an integer for length, and builds and returns an array of strings of the given length
+// input: integer
+// create empty result array
+// do integer times the following steps:
+  // generate random word with length between 1-10 letters
+    // to generate random word, generate the random length of the word (between 1-10)
+    // for each index of the random word, select a random letter based on the corresponding letter of a random index in the string of all 26 letters
+  // add word to result array
+// output: result array
+
+function randomTest(int) {
+  var resultArray = [];
+  for (var i=0; i < int; i++) {
+    resultArray.push(randomWord());
+  }
+  return resultArray;
+}
+
+function randomWord() {
+    var word = "";
+    var possible = "abcdefghijklmnopqrstuvwxyz";
+    var wordlength = getRandomInt(1,10);
+    for (var i=0; i < wordlength; i++ ) {
+      word += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+    return word;
+}
+
+// Returns a random integer between min (included) and max (included)
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 
 // Release 0 driver code:
 var array = ["hatchet", "rations", "water jug", "binoculars","shotgun", "compass", "CB radio", "batteries"];
-console.log(longestPhrase(array));
+console.log(longestWord(array));
 
 // Release 1 driver code:
 var object1 = {name: "Steven", age: 54};
 var object2 = {name: "Tamir", age: 54};
 console.log(keyvalueMatch(object1, object2));
+
+// Release 2 driver code:
+// do 10 times: generate array, print array, feed array to "longest word" function, and print result.
+for (var i = 0; i < 10; i++) {
+  var newArray = randomTest(getRandomInt(1,5));
+  console.log(newArray);
+  console.log(longestWord(newArray));
+}
