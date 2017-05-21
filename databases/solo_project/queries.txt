@@ -1,4 +1,4 @@
-Run a SQL query for each of the following:
+Release 2: Run a SQL query for each of the following:
 
 1) Display the information in one table (either table is fine).
 Query command:
@@ -72,3 +72,44 @@ Output (after running query: SELECT * FROM items):
   7|Caesar Dressing|15|true|2
   8|Pepsi|2|true|3
   9|Mountain Dew|2|true|3
+
+Release 3: Additional join queries
+Query:
+  SELECT suppliers.supplier_name, items.name, items.in_stock FROM suppliers LEFT OUTER JOIN items ON suppliers.id = items.supplier_id;
+Output:
+  Heinz|Ketchup|true
+  Heinz|Mustard|true
+  Kraft|American cheese singles|true
+  Kraft|Caesar Dressing|true
+  Kraft|EasyMac|true
+  Kraft|Lunchables|true
+  PepsiCo|Mountain Dew|true
+  PepsiCo|Pepsi|true
+
+Query:
+  SELECT items.id, items.name, suppliers.supplier_name FROM items CROSS JOIN suppliers;
+Output:
+  1|Ketchup|Heinz
+  1|Ketchup|Kraft
+  1|Ketchup|PepsiCo
+  2|Mustard|Heinz
+  2|Mustard|Kraft
+  2|Mustard|PepsiCo
+  4|American cheese singles|Heinz
+  4|American cheese singles|Kraft
+  4|American cheese singles|PepsiCo
+  5|EasyMac|Heinz
+  5|EasyMac|Kraft
+  5|EasyMac|PepsiCo
+  6|Lunchables|Heinz
+  6|Lunchables|Kraft
+  6|Lunchables|PepsiCo
+  7|Caesar Dressing|Heinz
+  7|Caesar Dressing|Kraft
+  7|Caesar Dressing|PepsiCo
+  8|Pepsi|Heinz
+  8|Pepsi|Kraft
+  8|Pepsi|PepsiCo
+  9|Mountain Dew|Heinz
+  9|Mountain Dew|Kraft
+  9|Mountain Dew|PepsiCo
